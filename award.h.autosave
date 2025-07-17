@@ -1,0 +1,33 @@
+#ifndef AWARD_H
+#define AWARD_H
+
+#include <QWidget>
+#include<QMainWindow>
+#include<QTimer>
+#include<QString>
+
+namespace Ui {
+class award;
+}
+QT_END_NAMESPACE
+
+class award : public QMainWindow
+{
+    Q_OBJECT
+
+public:
+    explicit award(QWidget *parent = nullptr);
+    ~award();
+private slots:
+    void onStartClicked();
+    void onStopClicked();
+    void onExportClicked();
+    void updateDisplay();
+void showHistory()
+    
+
+private:
+    Ui::award *ui;
+};
+
+#endif // AWARD_H

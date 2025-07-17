@@ -1,0 +1,40 @@
+#include "award.h"
+#include "ui_award.h"
+#include<QWidget>
+#include<QPushButton>
+#include<QMenu>
+#include<QMenuBar>
+#include<QMainWindow>
+#include<QAction>
+
+award::award(QWidget *parent)
+    : QMainWindow(parent)
+    , ui(new Ui::award)
+{
+    ui->setupUi(this);
+    this->setWindowTitle("抽奖");
+    
+    //菜单栏
+    QMenuBar*menuBar =new QMenuBar(this);
+    setMenuBar(menuBar);
+    //创建菜单
+    QMenu*fileMenu=menuBar->addMenu("中奖名单");
+    //点开可以显示以往中奖名单
+    
+    
+    QPushButton*btn1=new QPushButton(this);
+    btn1->setText("开始");
+    QPushButton*btn2=new QPushButton(this);
+    btn2->setText("结束");
+    
+    //使用fisher-yates shuffle算法完成抽奖
+    //用链表作为存储候选人名单的基础数据结构
+    //插入抽奖过程播放的gif和音频
+    
+    //所有抽中人员历史记录
+}
+
+award::~award()
+{
+    delete ui;
+}
