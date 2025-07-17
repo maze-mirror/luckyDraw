@@ -5,7 +5,7 @@
 award::award(QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::award)
-{
+{//bianji
     ui->setupUi(this);
     this->setWindowTitle("抽奖");
     QPushButton*btn1=new QPushButton(this);
