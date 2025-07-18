@@ -76,9 +76,9 @@ void lists::setupCentralWidget()
     setCentralWidget(centralWidget);
 
     // 连接信号和槽
-    connect(addButton, &QPushButton::clicked, this, &MainWindow::addPerson);
-    connect(editButton, &QPushButton::clicked, this, &MainWindow::editPerson);
-    connect(deleteButton, &QPushButton::clicked, this, &MainWindow::deletePerson);
+    connect(addButton, &QPushButton::clicked, this, &lists::addPerson);
+    connect(editButton, &QPushButton::clicked, this, &lists::editPerson);
+    connect(deleteButton, &QPushButton::clicked, this, &lists::deletePerson);
 }
 //菜单栏
 void lists::setupMenus()
@@ -102,11 +102,11 @@ void lists::setupMenus()
     fileMenu->addAction(loadProjectAction);
 
     // 连接信号和槽
-    connect(importTextAction, &QAction::triggered, this, &MainWindow::importFromText);
-    connect(importCSVAction, &QAction::triggered, this, &MainWindow::importFromCSV);
-    connect(saveProjectAction, &QAction::triggered, this, &MainWindow::saveProject);
-    connect(loadProjectAction, &QAction::triggered, this, &MainWindow::loadProject);
-    //connect(fontAction, &QAction::triggered, this, &MainWindow::showFontDialog);
+    connect(importTextAction, &QAction::triggered, this, &lists::importFromText);
+    connect(importCSVAction, &QAction::triggered, this, &lists::importFromCSV);
+    connect(saveProjectAction, &QAction::triggered, this, &lists::saveProject);
+    connect(loadProjectAction, &QAction::triggered, this, &lists::loadProject);
+    //connect(fontAction, &QAction::triggered, this, &lists::showFontDialog);
 }
 //时间
 void lists::setupStatusBar()
@@ -117,7 +117,7 @@ void lists::setupStatusBar()
 
     // 设置定时器更新状态栏时间
     statusTimer = new QTimer(this);
-    connect(statusTimer, &QTimer::timeout, this, &MainWindow::updateStatus);
+    connect(statusTimer, &QTimer::timeout, this, &lists::updateStatus);
     statusTimer->start(1000); // 每秒更新一次
 
     // 初始更新状态栏
